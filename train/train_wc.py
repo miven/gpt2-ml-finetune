@@ -18,7 +18,7 @@
 import tensorflow as tf
 import sys
 import os
-sys.path.append('/data/home/share1/gpt2-ml')
+sys.path.append('/content/gpt2')
 
 from train.dataloader import input_fn_builder
 from train.modeling import model_fn_builder, GroverConfig
@@ -56,14 +56,14 @@ flags.DEFINE_integer("train_batch_size", 1, "Total batch size for training.")
 
 flags.DEFINE_float("learning_rate", 5e-5, "The initial learning rate for adafactor.")
 
-flags.DEFINE_integer("num_train_steps", 110000, "Number of training steps.")
+flags.DEFINE_integer("num_train_steps", 230000, "Number of training steps.")
 
 flags.DEFINE_integer("num_warmup_steps", 500, "Number of warmup steps.")
 
-flags.DEFINE_integer("save_checkpoints_steps", 1600,
+flags.DEFINE_integer("save_checkpoints_steps", 500,
                      "How often to save the model checkpoint.")
 
-flags.DEFINE_integer("iterations_per_loop", 1600,
+flags.DEFINE_integer("iterations_per_loop", 500,
                      "How many steps to make in each estimator call.")
 
 flags.DEFINE_integer("max_eval_steps", 100, "Maximum number of eval steps.")
